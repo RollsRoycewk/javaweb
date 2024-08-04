@@ -51,4 +51,20 @@
     <!--        <url-pattern>/a</url-pattern>-->
     <!--        <url-pattern>/b</url-pattern>-->
     <!--    </servlet-mapping>-->
+
+    <!--    <servlet>-->
+    <!--        <servlet-name>servletLifeCycle</servlet-name>-->
+    <!--        <servlet-class>com.atguigu.servlet.ServletLifeCycle</servlet-class>-->
+    <!--        &lt;!&ndash;-->
+    <!--            默认值是-1  含义是tomcat启动时不会实例化该servlet-->
+    <!--            其他正整数 15 含义是tomcat在启动时，实例化该servlet的顺序-->
+    <!--            如果序号冲突了，tomcat会自动协调启动程序-->
+    <!--         &ndash;&gt;-->
+    <!--        <load-on-startup>6</load-on-startup>-->
+    <!--    </servlet>-->
+
+    <!--    <servlet-mapping>-->
+    <!--        <servlet-name>servletLifeCycle</servlet-name>-->
+    <!--        <url-pattern>/servletLifeCycle</url-pattern>-->
+    <!--    </servlet-mapping>-->
 </web-app>
