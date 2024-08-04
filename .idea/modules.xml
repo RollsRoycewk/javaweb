@@ -3,7 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/javaweb.iml" filepath="$PROJECT_DIR$/.idea/javaweb.iml" />
-      <module fileurl="file://$PROJECT_DIR$/web-all/web-01/web-01.iml" filepath="$PROJECT_DIR$/web-all/web-01/web-01.iml" />
+      <module fileurl="file://$PROJECT_DIR$/web-all/web-02-servlet01/web-02-servlet01.iml" filepath="$PROJECT_DIR$/web-all/web-02-servlet01/web-02-servlet01.iml" />
       <module fileurl="file://$PROJECT_DIR$/web-all/web-all.iml" filepath="$PROJECT_DIR$/web-all/web-all.iml" />
     </modules>
   </component>
