@@ -32,23 +32,23 @@
                 /a/*     匹配前缀，后缀迷糊
                 *.action 匹配后缀，前缀模糊
      -->
-    <servlet>
-        <servlet-name>servlet1</servlet-name>
-        <servlet-class>com.atguigu.servlet.Servlet1</servlet-class>
-    </servlet>
+    <!--    <servlet>-->
+    <!--        <servlet-name>servlet1</servlet-name>-->
+    <!--        <servlet-class>com.atguigu.servlet.Servlet1</servlet-class>-->
+    <!--    </servlet>-->
 
-    <servlet-mapping>
-        <servlet-name>servlet1</servlet-name>
-        <!--    精确匹配    -->
-        <url-pattern>/servlet1</url-pattern>
-        <url-pattern>/s1</url-pattern>
-        <url-pattern>/a/*</url-pattern>
-        <url-pattern>*.action</url-pattern>
-    </servlet-mapping>
+    <!--    <servlet-mapping>-->
+    <!--        <servlet-name>servlet1</servlet-name>-->
+    <!--        &lt;!&ndash;    精确匹配    &ndash;&gt;-->
+    <!--        <url-pattern>/servlet1</url-pattern>-->
+    <!--        <url-pattern>/s1</url-pattern>-->
+    <!--        <url-pattern>/a/*</url-pattern>-->
+    <!--        <url-pattern>*.action</url-pattern>-->
+    <!--    </servlet-mapping>-->
 
-    <servlet-mapping>
-        <servlet-name>servlet1</servlet-name>
-        <url-pattern>/a</url-pattern>
-        <url-pattern>/b</url-pattern>
-    </servlet-mapping>
+    <!--    <servlet-mapping>-->
+    <!--        <servlet-name>servlet1</servlet-name>-->
+    <!--        <url-pattern>/a</url-pattern>-->
+    <!--        <url-pattern>/b</url-pattern>-->
+    <!--    </servlet-mapping>-->
 </web-app>
