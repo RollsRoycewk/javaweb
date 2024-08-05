@@ -1,6 +1,7 @@
 package com.atguigu.servlet;
 
 import jakarta.servlet.ServletConfig;
+import jakarta.servlet.ServletContext;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebInitParam;
 import jakarta.servlet.annotation.WebServlet;
@@ -41,5 +42,11 @@ public class Servlet2 extends HttpServlet {
             String pname = initParameterNames.nextElement();
             System.out.println(pname + "=" + getInitParameter(pname));
         }
+
+        // 获取ServletContext
+        ServletContext servletContext1 = servletConfig.getServletContext();
+        // 获取域中的数据
+        Object ka = servletContext1.getAttribute("ka");
+        System.out.println("servlte2    ka:" + ka);
     }
 }
