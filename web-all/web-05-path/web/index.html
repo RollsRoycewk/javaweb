@@ -3,6 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <!--
+        当前页面中，所有不加任何修饰的相对路径前，会自动补充href中的内容
+      -->
+    <base href="/demo05/">
 </head>
 <body>
 <!--
@@ -21,6 +25,7 @@
     优点：目标资源路径的写法不会受到当前资源路径的影响，不同的位置，绝对路径写法一致
     缺点：绝对路径要补充项目的上下文 项目上下文是可以改变的
 
+    通过head>base>href属性，定义相对路径公共前缀，通过公共前缀把一个相对路径转换为绝对路径（不完美）
 -->
 
 <!--
@@ -31,6 +36,9 @@
 <!--
     绝对路径 http://localhost:8088/demo05/ 可以访问
 -->
-<img src="/demo05/static/img/woke.png">
+<!--<img src="/demo05/static/img/woke.png">-->
+
+<!--<base href="/demo05/">-->
+<img src="static/img/woke.png">
 </body>
 </html>
