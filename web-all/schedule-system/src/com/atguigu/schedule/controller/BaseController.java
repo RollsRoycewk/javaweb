@@ -1,4 +1,4 @@
-package com.atguigu.schedule.service.impl;
+package com.atguigu.schedule.controller;
 
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
@@ -9,15 +9,15 @@ import java.io.IOException;
 import java.lang.reflect.Method;
 
 /**
- * ClassName: SysScheduleServiceImpl
- * Package: com.atguigu.schedule.service.impl
+ * ClassName: BaseController
+ * Package: com.atguigu.schedule.controller
  * Description:
  *
  * @Author wk
- * @Create 2024-08-10 11:32
+ * @Create 2024-08-10 15:26
  * @Version 1.0
  */
-public class SysScheduleServiceImpl extends HttpServlet {
+public class BaseController extends HttpServlet {
     @Override
     protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         // 判断此次请求时 增？ 删？ 改？ 查？
@@ -46,7 +46,7 @@ public class SysScheduleServiceImpl extends HttpServlet {
         } catch (Exception e) {
             e.printStackTrace();
         }
-        
+
 
     }
 }
