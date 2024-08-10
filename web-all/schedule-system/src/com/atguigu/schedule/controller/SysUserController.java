@@ -3,6 +3,7 @@ package com.atguigu.schedule.controller;
 import com.atguigu.schedule.pojo.SysUser;
 import com.atguigu.schedule.service.SysUserService;
 import com.atguigu.schedule.service.impl.SysUserServiceImpl;
+import com.atguigu.schedule.util.MD5Util;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServletRequest;
@@ -48,6 +49,35 @@ public class SysUserController extends BaseController {
             resp.sendRedirect("/registSuccess.html");
         } else {
             resp.sendRedirect("/registFail.html");
+        }
+    }
+
+    /**
+     * 接收用于登录请求，完成登录业务接口
+     *
+     * @param req
+     * @param resp
+     * @throws ServletException
+     * @throws IOException
+     */
+    protected void login(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        // 1 接收用户名和密码
+        String username = req.getParameter("username");
+        String userPwd = req.getParameter("userPwd");
+
+        // 2 调用服务层方法，根据用户名查询用户信息
+        SysUser loginUser = userService.findByUsername(username);
+
+        if (null == loginUser) {
+            // 跳转到用户名有错误提示页
+            resp.sendRedirect("/loginUsernameError.html");
+        } else if (!MD5Util.encrypt(userPwd).equals(loginUser.getUserPwd())) {
+            // 3 判断密码是否匹配
+            //  跳转到密码有误提示页
+            resp.sendRedirect("/loginUserPwdError.html");
+        } else {
+            // 4 跳转到首页
+            resp.sendRedirect("/showSchedule.html");
         }
     }
 }
