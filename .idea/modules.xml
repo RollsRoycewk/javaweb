@@ -9,6 +9,7 @@
       <module fileurl="file://$PROJECT_DIR$/web-all/web-04-forward-redirect/web-04-forward-redirect.iml" filepath="$PROJECT_DIR$/web-all/web-04-forward-redirect/web-04-forward-redirect.iml" />
       <module fileurl="file://$PROJECT_DIR$/web-all/web-05-path/web-05-path.iml" filepath="$PROJECT_DIR$/web-all/web-05-path/web-05-path.iml" />
       <module fileurl="file://$PROJECT_DIR$/web-all/web-06-cookie-session/web-06-cookie-session.iml" filepath="$PROJECT_DIR$/web-all/web-06-cookie-session/web-06-cookie-session.iml" />
+      <module fileurl="file://$PROJECT_DIR$/web-all/web-07-session-domain/web-07-session-domain.iml" filepath="$PROJECT_DIR$/web-all/web-07-session-domain/web-07-session-domain.iml" />
       <module fileurl="file://$PROJECT_DIR$/web-all/web-all.iml" filepath="$PROJECT_DIR$/web-all/web-all.iml" />
     </modules>
   </component>
