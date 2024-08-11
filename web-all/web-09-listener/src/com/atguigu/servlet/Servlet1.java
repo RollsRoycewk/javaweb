@@ -1,5 +1,7 @@
 package com.atguigu.servlet;
 
+import com.atguigu.listener.MyActivationListener;
+import com.atguigu.listener.SessionBindingListener;
 import jakarta.servlet.ServletContext;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
@@ -29,6 +31,13 @@ public class Servlet1 extends HttpServlet {
         application.setAttribute("keya", "valuea");
 
         HttpSession session = req.getSession();
+
+        SessionBindingListener sbl = new SessionBindingListener();
+        session.setAttribute("sbl", sbl);
+        session.removeAttribute("sbl");
+
+        MyActivationListener myActivationListener = new MyActivationListener();
+        session.setAttribute("lis", myActivationListener);
 
         // 手动销毁session
         session.invalidate();
