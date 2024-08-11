@@ -10,6 +10,7 @@
       <module fileurl="file://$PROJECT_DIR$/web-all/web-05-path/web-05-path.iml" filepath="$PROJECT_DIR$/web-all/web-05-path/web-05-path.iml" />
       <module fileurl="file://$PROJECT_DIR$/web-all/web-06-cookie-session/web-06-cookie-session.iml" filepath="$PROJECT_DIR$/web-all/web-06-cookie-session/web-06-cookie-session.iml" />
       <module fileurl="file://$PROJECT_DIR$/web-all/web-07-session-domain/web-07-session-domain.iml" filepath="$PROJECT_DIR$/web-all/web-07-session-domain/web-07-session-domain.iml" />
+      <module fileurl="file://$PROJECT_DIR$/web-all/web-08-filter/web-08-filter.iml" filepath="$PROJECT_DIR$/web-all/web-08-filter/web-08-filter.iml" />
       <module fileurl="file://$PROJECT_DIR$/web-all/web-all.iml" filepath="$PROJECT_DIR$/web-all/web-all.iml" />
     </modules>
   </component>
