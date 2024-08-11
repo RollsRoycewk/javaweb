@@ -12,6 +12,7 @@
       <module fileurl="file://$PROJECT_DIR$/web-all/web-07-session-domain/web-07-session-domain.iml" filepath="$PROJECT_DIR$/web-all/web-07-session-domain/web-07-session-domain.iml" />
       <module fileurl="file://$PROJECT_DIR$/web-all/web-08-filter/web-08-filter.iml" filepath="$PROJECT_DIR$/web-all/web-08-filter/web-08-filter.iml" />
       <module fileurl="file://$PROJECT_DIR$/web-all/web-09-listener/web-09-listener.iml" filepath="$PROJECT_DIR$/web-all/web-09-listener/web-09-listener.iml" />
+      <module fileurl="file://$PROJECT_DIR$/web-all/web-10-ajax/web-10-ajax.iml" filepath="$PROJECT_DIR$/web-all/web-10-ajax/web-10-ajax.iml" />
       <module fileurl="file://$PROJECT_DIR$/web-all/web-all.iml" filepath="$PROJECT_DIR$/web-all/web-all.iml" />
     </modules>
   </component>
