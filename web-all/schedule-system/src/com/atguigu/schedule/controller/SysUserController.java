@@ -6,7 +6,7 @@ import com.atguigu.schedule.pojo.SysUser;
 import com.atguigu.schedule.service.SysUserService;
 import com.atguigu.schedule.service.impl.SysUserServiceImpl;
 import com.atguigu.schedule.util.MD5Util;
-import com.fasterxml.jackson.databind.ObjectMapper;
+import com.atguigu.schedule.util.WebUtil;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServletRequest;
@@ -114,10 +114,6 @@ public class SysUserController extends BaseController {
         }
 
         // 将result对象转换为JSON串响应给客户端
-        ObjectMapper objectMapper = new ObjectMapper();
-        String info = objectMapper.writeValueAsString(result);
-        // 告诉客户端响应给你的是一个json串
-        resp.setContentType("application/json;charset=utf-8");
-        resp.getWriter().write(info);
+        WebUtil.writeJson(resp, result);
     }
 }
