@@ -19,4 +19,10 @@ public interface NewsUserService {
      * @return 找到返回NewsUser对象, 找不到返回null
      */
     NewsUser findByUsername(String username);
+
+    /**
+     * @param userId
+     * @return
+     */
+    NewsUser findByUid(Integer userId);
 }

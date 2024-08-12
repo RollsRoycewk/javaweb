@@ -31,6 +31,41 @@ import java.util.Map;
 public class NewsUserController extends BaseController {
     private final NewsUserService userService = new NewsUserServiceImpl();
 
+
+    /**
+     * 根据token口令获得用户信息的接口实现
+     *
+     * @param req
+     * @param resp
+     * @throws ServletException
+     * @throws IOException
+     */
+    protected void getUserInfo(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        // 获取请求中的token
+        String token = req.getHeader("token");
+
+        Result result = Result.build(null, ResultCodeEnum.NOTLOGIN);
+
+        if (null != token && (!"".equals(token))) {
+            if (!JwtHelper.isExpiration(token)) {
+                Integer userId = JwtHelper.getUserId(token).intValue();
+
+                NewsUser newsUser = userService.findByUid(userId);
+
+                if (null != newsUser) {
+                    //通过校验 查询用户信息放入Result
+                    Map data = new HashMap();
+                    newsUser.setUserPwd("");
+                    data.put("loginUser", newsUser);
+
+                    result = Result.ok(data);
+                }
+            }
+        }
+
+        WebUtil.writeJson(resp, result);
+    }
+
     protected void login(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         // 接收用户名和密码
         /*{

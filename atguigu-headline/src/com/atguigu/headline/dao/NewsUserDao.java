@@ -17,4 +17,10 @@ public interface NewsUserDao {
      * @return
      */
     NewsUser findByUsername(String username);
+
+    /**
+     * @param userId
+     * @return
+     */
+    NewsUser findByUid(Integer userId);
 }
