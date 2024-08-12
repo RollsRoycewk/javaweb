@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/atguigu-headline/atguigu-headline.iml" filepath="$PROJECT_DIR$/atguigu-headline/atguigu-headline.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/javaweb.iml" filepath="$PROJECT_DIR$/.idea/javaweb.iml" />
       <module fileurl="file://$PROJECT_DIR$/web-all/schedule-system/schedule-system.iml" filepath="$PROJECT_DIR$/web-all/schedule-system/schedule-system.iml" />
       <module fileurl="file://$PROJECT_DIR$/web-all/web-02-servlet01/web-02-servlet01.iml" filepath="$PROJECT_DIR$/web-all/web-02-servlet01/web-02-servlet01.iml" />
