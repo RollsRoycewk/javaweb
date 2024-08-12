@@ -32,6 +32,44 @@ public class NewsUserController extends BaseController {
     private final NewsUserService userService = new NewsUserServiceImpl();
 
 
+    protected void regist(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        // 接收JSON信息
+        NewsUser registUser = WebUtil.readJson(req, NewsUser.class);
+
+        // 调用服务层将用户信息存入数据
+        Integer rows = userService.registUser(registUser);
+
+        // 根据存入是否成功处理响应值
+        Result result = Result.ok(null);
+
+        if (rows == 0) {
+            result = Result.build(null, ResultCodeEnum.USERNAME_USED);
+        }
+
+        WebUtil.writeJson(resp, result);
+    }
+
+    /**
+     * 校验用户名是否被占用的业务接口实现
+     *
+     * @param req
+     * @param resp
+     * @throws ServletException
+     * @throws IOException
+     */
+    protected void checkUserName(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        // 获取账号
+        String username = req.getParameter("username");
+        // 根据用户名查询用户信息  找到了 返回505  找不到 200
+        NewsUser newsUser = userService.findByUsername(username);
+        Result result = Result.ok(null);
+
+        if (null != newsUser) {
+            result = Result.build(null, ResultCodeEnum.USERNAME_USED);
+        }
+        WebUtil.writeJson(resp, result);
+    }
+
     /**
      * 根据token口令获得用户信息的接口实现
      *

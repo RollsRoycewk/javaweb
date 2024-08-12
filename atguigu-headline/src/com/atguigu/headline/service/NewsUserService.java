@@ -25,4 +25,10 @@ public interface NewsUserService {
      * @return
      */
     NewsUser findByUid(Integer userId);
+
+    /**
+     * @param registUser
+     * @return
+     */
+    Integer registUser(NewsUser registUser);
 }

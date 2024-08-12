@@ -23,4 +23,10 @@ public interface NewsUserDao {
      * @return
      */
     NewsUser findByUid(Integer userId);
+
+    /**
+     * @param registUser
+     * @return
+     */
+    Integer insertUser(NewsUser registUser);
 }
