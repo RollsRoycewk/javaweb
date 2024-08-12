@@ -1,5 +1,9 @@
 package com.atguigu.headline.dao;
 
+import com.atguigu.headline.pojo.NewsType;
+
+import java.util.List;
+
 /**
  * ClassName: NewsTypeDao
  * Package: com.atguigu.headline.dao
@@ -10,4 +14,8 @@ package com.atguigu.headline.dao;
  * @Version 1.0
  */
 public interface NewsTypeDao {
+    /**
+     * @return
+     */
+    List<NewsType> findAll();
 }
