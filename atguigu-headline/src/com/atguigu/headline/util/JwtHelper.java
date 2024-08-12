@@ -8,6 +8,7 @@ import java.util.Date;
 
 public class JwtHelper {
     private static final long tokenExpiration = 1000 * 60 * 60;
+    //    private static final long tokenExpiration = 5000;
     private static final String tokenSignKey = "123456";
 
     //生成token字符串

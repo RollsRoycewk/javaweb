@@ -1,5 +1,7 @@
 package com.atguigu.headline.dao;
 
+import com.atguigu.headline.pojo.NewsUser;
+
 /**
  * ClassName: NewsUserDao
  * Package: com.atguigu.headline.dao
@@ -10,4 +12,9 @@ package com.atguigu.headline.dao;
  * @Version 1.0
  */
 public interface NewsUserDao {
+    /**
+     * @param username
+     * @return
+     */
+    NewsUser findByUsername(String username);
 }
