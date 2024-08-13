@@ -43,4 +43,9 @@ public interface NewsHeadlineService {
      * @param newsHeadline
      */
     int update(NewsHeadline newsHeadline);
+
+    /**
+     * @param hid
+     */
+    int removeByHid(int hid);
 }

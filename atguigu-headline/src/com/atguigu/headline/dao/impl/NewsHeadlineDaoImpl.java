@@ -186,4 +186,11 @@ public class NewsHeadlineDaoImpl extends BaseDao implements NewsHeadlineDao {
 
         return baseUpdate(sql, newsHeadline.getTitle(), newsHeadline.getArticle(), newsHeadline.getType(), newsHeadline.getHid());
     }
+
+    @Override
+    public int removeByHid(int hid) {
+        String sql = "update news_headline set is_deleted = 1 where hid = ?";
+
+        return baseUpdate(sql, hid);
+    }
 }

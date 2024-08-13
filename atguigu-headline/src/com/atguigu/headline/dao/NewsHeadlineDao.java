@@ -57,4 +57,10 @@ public interface NewsHeadlineDao {
      * @return
      */
     int update(NewsHeadline newsHeadline);
+
+    /**
+     * @param hid
+     * @return
+     */
+    int removeByHid(int hid);
 }
