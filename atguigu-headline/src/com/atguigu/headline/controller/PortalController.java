@@ -2,6 +2,7 @@ package com.atguigu.headline.controller;
 
 import com.atguigu.headline.common.Result;
 import com.atguigu.headline.pojo.NewsType;
+import com.atguigu.headline.pojo.vo.HeadlineDetailVo;
 import com.atguigu.headline.pojo.vo.HeadlineQueryVo;
 import com.atguigu.headline.service.NewsHeadlineService;
 import com.atguigu.headline.service.NewsTypeService;
@@ -38,6 +39,26 @@ public class PortalController extends BaseController {
     private final NewsTypeService typeService = new NewsTypeServiceImpl();
     private final NewsHeadlineService headlineService = new NewsHeadlineServiceImpl();
 
+
+    /**
+     * 查询头条详情的业务接口实现
+     *
+     * @param req
+     * @param resp
+     * @throws ServletException
+     * @throws IOException
+     */
+    protected void showHeadlineDetail(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        // 接收要查询头条的hid
+        int hid = Integer.parseInt(req.getParameter("hid"));
+        // 调用服务层完成查询处理
+        HeadlineDetailVo headlineDetailVo = headlineService.findHeadlineDetail(hid);
+
+        // 将查到的信息响应给客户端
+        HashMap data = new HashMap();
+        data.put("headline", headlineDetailVo);
+        WebUtil.writeJson(resp, Result.ok(data));
+    }
 
     /**
      * 分页查询头条信息的接口实现

@@ -1,5 +1,6 @@
 package com.atguigu.headline.service;
 
+import com.atguigu.headline.pojo.vo.HeadlineDetailVo;
 import com.atguigu.headline.pojo.vo.HeadlineQueryVo;
 
 import java.util.Map;
@@ -19,4 +20,10 @@ public interface NewsHeadlineService {
      * @return
      */
     Map findPage(HeadlineQueryVo headlineQueryVo);
+
+    /**
+     * @param hid
+     * @return
+     */
+    HeadlineDetailVo findHeadlineDetail(int hid);
 }

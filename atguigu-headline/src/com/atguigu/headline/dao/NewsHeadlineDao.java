@@ -1,5 +1,6 @@
 package com.atguigu.headline.dao;
 
+import com.atguigu.headline.pojo.vo.HeadlineDetailVo;
 import com.atguigu.headline.pojo.vo.HeadlinePageVo;
 import com.atguigu.headline.pojo.vo.HeadlineQueryVo;
 
@@ -26,4 +27,15 @@ public interface NewsHeadlineDao {
      * @return
      */
     int findPageCount(HeadlineQueryVo headlineQueryVo);
+
+    /**
+     * @param hid
+     */
+    int incrPageViews(int hid);
+
+    /**
+     * @param hid
+     * @return
+     */
+    HeadlineDetailVo findHealineDetail(int hid);
 }

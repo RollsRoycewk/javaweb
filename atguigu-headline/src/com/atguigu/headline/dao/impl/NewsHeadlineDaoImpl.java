@@ -2,6 +2,7 @@ package com.atguigu.headline.dao.impl;
 
 import com.atguigu.headline.dao.BaseDao;
 import com.atguigu.headline.dao.NewsHeadlineDao;
+import com.atguigu.headline.pojo.vo.HeadlineDetailVo;
 import com.atguigu.headline.pojo.vo.HeadlinePageVo;
 import com.atguigu.headline.pojo.vo.HeadlineQueryVo;
 
@@ -96,5 +97,43 @@ public class NewsHeadlineDaoImpl extends BaseDao implements NewsHeadlineDao {
 
         Long count = baseQueryObject(Long.class, sql, params.toArray());
         return count.intValue();
+    }
+
+    @Override
+    public int incrPageViews(int hid) {
+        String sql = "update news_headline set page_views= page_views + 1 where hid = ?";
+        return baseUpdate(sql, hid);
+    }
+
+    @Override
+    public HeadlineDetailVo findHealineDetail(int hid) {
+        String sql = """
+                select 
+                  h.hid hid ,
+                  h.title title ,
+                  h.article article ,
+                  h.type type ,
+                  t.tname typeName ,
+                  h.page_views pageViews ,
+                  TIMESTAMPDIFF(HOUR,h.create_time,now()) pastHours ,
+                  h.publisher publisher ,
+                  u.nick_name author
+                from 
+                   news_headline h
+                left join 
+                    news_type t
+                on 
+                    h.type = t.tid
+                left join 
+                    news_user u 
+                on 
+                    h.publisher = u.uid
+                where
+                    h.hid = ?        
+                """;
+
+        List<HeadlineDetailVo> list = baseQuery(HeadlineDetailVo.class, sql, hid);
+
+        return null != list && list.size() > 0 ? list.get(0) : null;
     }
 }
