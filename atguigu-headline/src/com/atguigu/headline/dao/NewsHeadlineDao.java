@@ -45,4 +45,16 @@ public interface NewsHeadlineDao {
      * @return
      */
     int addNewsHeadline(NewsHeadline newsHeadline);
+
+    /**
+     * @param hid
+     * @return
+     */
+    NewsHeadline findByHid(int hid);
+
+    /**
+     * @param newsHeadline
+     * @return
+     */
+    int update(NewsHeadline newsHeadline);
 }

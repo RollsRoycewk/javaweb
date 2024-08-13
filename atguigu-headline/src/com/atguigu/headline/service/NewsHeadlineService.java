@@ -32,4 +32,15 @@ public interface NewsHeadlineService {
      * @param newsHeadline
      */
     int addNewsHeadline(NewsHeadline newsHeadline);
+
+    /**
+     * @param hid
+     * @return
+     */
+    NewsHeadline findByHid(int hid);
+
+    /**
+     * @param newsHeadline
+     */
+    int update(NewsHeadline newsHeadline);
 }
