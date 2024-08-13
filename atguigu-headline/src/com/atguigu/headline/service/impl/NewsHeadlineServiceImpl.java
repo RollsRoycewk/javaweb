@@ -2,6 +2,7 @@ package com.atguigu.headline.service.impl;
 
 import com.atguigu.headline.dao.NewsHeadlineDao;
 import com.atguigu.headline.dao.impl.NewsHeadlineDaoImpl;
+import com.atguigu.headline.pojo.NewsHeadline;
 import com.atguigu.headline.pojo.vo.HeadlineDetailVo;
 import com.atguigu.headline.pojo.vo.HeadlinePageVo;
 import com.atguigu.headline.pojo.vo.HeadlineQueryVo;
@@ -67,5 +68,11 @@ public class NewsHeadlineServiceImpl implements NewsHeadlineService {
         headlineDao.incrPageViews(hid);
         // 查询头条的详情
         return headlineDao.findHealineDetail(hid);
+    }
+
+
+    @Override
+    public int addNewsHeadline(NewsHeadline newsHeadline) {
+        return headlineDao.addNewsHeadline(newsHeadline);
     }
 }

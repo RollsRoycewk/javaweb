@@ -2,6 +2,7 @@ package com.atguigu.headline.dao.impl;
 
 import com.atguigu.headline.dao.BaseDao;
 import com.atguigu.headline.dao.NewsHeadlineDao;
+import com.atguigu.headline.pojo.NewsHeadline;
 import com.atguigu.headline.pojo.vo.HeadlineDetailVo;
 import com.atguigu.headline.pojo.vo.HeadlinePageVo;
 import com.atguigu.headline.pojo.vo.HeadlineQueryVo;
@@ -135,5 +136,14 @@ public class NewsHeadlineDaoImpl extends BaseDao implements NewsHeadlineDao {
         List<HeadlineDetailVo> list = baseQuery(HeadlineDetailVo.class, sql, hid);
 
         return null != list && list.size() > 0 ? list.get(0) : null;
+    }
+
+    @Override
+    public int addNewsHeadline(NewsHeadline newsHeadline) {
+        String sql = """
+                insert into news_headline 
+                values (DEFAULT,?,?,?,?,0,now(),now(),0)
+                """;
+        return baseUpdate(sql, newsHeadline.getTitle(), newsHeadline.getArticle(), newsHeadline.getType(), newsHeadline.getPublisher());
     }
 }

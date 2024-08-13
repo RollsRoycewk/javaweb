@@ -31,6 +31,27 @@ import java.util.Map;
 public class NewsUserController extends BaseController {
     private final NewsUserService userService = new NewsUserServiceImpl();
 
+    /**
+     * 前端自己校验是否失去登录状态的接口
+     *
+     * @param req
+     * @param resp
+     * @throws ServletException
+     * @throws IOException
+     */
+    protected void checkLogin(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        String token = req.getHeader("token");
+
+        Result result = Result.build(null, ResultCodeEnum.NOTLOGIN);
+
+        if (null != token) {
+            if (!JwtHelper.isExpiration(token)) {
+                result = Result.ok(null);
+            }
+        }
+
+        WebUtil.writeJson(resp, result);
+    }
 
     protected void regist(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         // 接收JSON信息
