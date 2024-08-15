@@ -55,7 +55,7 @@ public class NewsHeadlineDaoImpl extends BaseDao implements NewsHeadlineDao {
                 """;
 
         if (headlineQueryVo.getType() != 0) {
-            sql = sql.concat(" add type = ? ");
+            sql = sql.concat(" and type = ? ");
             params.add(headlineQueryVo.getType());
         }
 
@@ -86,7 +86,7 @@ public class NewsHeadlineDaoImpl extends BaseDao implements NewsHeadlineDao {
                 """;
 
         if (headlineQueryVo.getType() != 0) {
-            sql = sql.concat(" add type = ? ");
+            sql = sql.concat(" and type = ? ");
             params.add(headlineQueryVo.getType());
         }
 
